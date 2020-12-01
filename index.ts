@@ -4,14 +4,13 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 
 
-const server = new Server();
+const server = Server.instance;
 
-
-// BodyParser para parsear los valores provienentes de un form y poderlos manipular como objetos o javascript
+// BodyParser para parsear los valores provenientes de un form y poderlos manipular como objetos javascript
 
 server.app.use(bodyParser.urlencoded({extended: true}));
 
-// otra configuracion es que pase a un formato json
+// otra configuracion es pasarlos a un formato json
 server.app.use(bodyParser.json());
 
 // CORS
