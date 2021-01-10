@@ -40,14 +40,21 @@ export default class Server {
         this.io.on('connection', cliente => {
             console.log('Cliente conectado');
 
+            console.log(cliente.id);
+
+            // conectar cliente
+            mySockets.conectarCliente(cliente);
+
+             // Configurar Usuario
+        mySockets.configurarUsuario(cliente, this.io );
+
         // mensajes
         mySockets.mensaje(cliente, this.io);
 
         // Desconectar
         mySockets.desconectar(cliente);
-           
-
-        });
+    });
+       
     }
 
     // metodo para inicializar mi app
