@@ -46,13 +46,16 @@ export default class Server {
             mySockets.conectarCliente(cliente);
 
              // Configurar Usuario
-        mySockets.configurarUsuario(cliente, this.io );
+            mySockets.configurarUsuario(cliente, this.io );
 
-        // mensajes
-        mySockets.mensaje(cliente, this.io);
+            // Obtener Usuarios activos
+            mySockets.ObtenerUsuarios(cliente, this.io);
 
-        // Desconectar
-        mySockets.desconectar(cliente);
+            // mensajes
+            mySockets.mensaje(cliente, this.io);
+
+            // Desconectar
+            mySockets.desconectar(cliente, this.io);
     });
        
     }

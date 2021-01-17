@@ -34,7 +34,7 @@ export class UserList {
 
     // obtener lista de usuarios
     public getLista() {
-        return this.lista;
+        return this.lista.filter( usuario => usuario.nombre !== 'sin-nombre'); // quiero que me retorne los usuarios diferentes a sin-nombre
     }
 
     // regresar un usuario
